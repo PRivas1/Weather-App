@@ -1,0 +1,37 @@
+body{
+    background-color: #393E46;
+    color: #d8d8d8;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-size: larger;
+}
+input, select{
+    height: 30px;
+    background-color: #948979;
+    border-style:solid;
+    border-color: #222831;
+    border-width: 4px;
+    
+}
+input{
+    width: 200px;
+    font-size: large;
+}
+select{
+    width: 70px;
+    height: 40px;
+    font-size: 15px;
+}
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.left, .right{
+    flex: unset;
+}
+
+
