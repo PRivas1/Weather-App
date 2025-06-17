@@ -43,3 +43,16 @@ button{
     background-color: #222831;
     padding: 15px;
 }
+
+.sevenDay{
+    display:flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.day{
+    background-color: #222831;
+    flex: 1 1 200px;
+    min-width: 200px;
+    text-align: center;
+}
