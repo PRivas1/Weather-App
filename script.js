@@ -1,17 +1,22 @@
 console.log("Running!");
+const loadingIconContainer = document.getElementById("loadingIcon");
+loadingIconContainer.innerHTML = "";
 
 function getWeather(city, state){
+    loadingIconContainer.innerHTML = '<div class="loader"></div>';
     console.log(city + ", " + state);
     fetch("https://nominatim.openstreetmap.org/search?city="+ city +"&state="+ state +"&format=json")
         .then(Response =>{
             if(!Response.ok){
                 console.error("Failed openstreetmap Api Call");
+                loadingIconContainer.innerHTML = "";
             }
             return Response.json();
         })
         .then(data =>{
             if(data.length == 0){
                 console.error("No Matches");
+                loadingIconContainer.innerHTML = "";
                 return;
             }
 
@@ -23,6 +28,7 @@ function getWeather(city, state){
                 .then(Response =>{
                     if(!Response.ok){
                         console.error("Failed weather Api Call");
+                        loadingIconContainer.innerHTML = "";
                     }
                     return Response.json();
                 })
@@ -60,5 +66,6 @@ function displayForecast(forecast) {
         `;
 
         forecastContainer.appendChild(day);
+        loadingIconContainer.innerHTML = "";
     });
 }
